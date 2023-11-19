@@ -8,6 +8,8 @@ Before proceeding to installation, make sure you have updated the OS and install
 sudo apt update
 sudo apt-get install -y apt-transport-https ca-certificates curl
 
+
+
 ## K8s Architecture
 https://kubernetes.io/images/docs/kubernetes-cluster-architecture.svg
 From above image we can see that we need a Control Panel node (Master node) to control nodes 1 & 2 (Worker Node 1 & Worker Node 2). For that we need to install docker, kubeadm, kubectl and kubelet on all nodes.
