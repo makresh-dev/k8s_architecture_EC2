@@ -23,13 +23,13 @@ sudo apt install docker.io
 
 ## Add the GCP keys and repository of Kubernetes on Master and Worker nodes:
 ```bash
-### Adding GPG keys.
+# Adding GPG keys.
 curl -fsSL "https://packages.cloud.google.com/apt/doc/apt-key.gpg" | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/kubernetes-archive-keyring.gpg
 
-### Add the repository to the sourcelist.
+# Add the repository to the sourcelist.
 echo 'deb https://packages.cloud.google.com/apt kubernetes-xenial main' | sudo tee /etc/apt/sources.list.d/kubernetes.list
 
-### After adding repos run this again
+# After adding repos run this again
 sudo apt update
 ```
 
@@ -44,16 +44,27 @@ sudo kubeadm init
 ```
 you will get output like this on master node if have correctly followed every step:
 >Your Kubernetes control-plane has initialized successfully!
+>
 >To start using your cluster, you need to run the following as a regular user:
+>
 >mkdir -p $HOME/-kube
+>
 >sudo cp -i /etc/kubernetes/admin.conf $HOME/-kube/config sudo chown $(id -u):$(id -g) $HOME/-kube/config
+>
 >lternatively, if you are the root user, you can run:
+>
 >export KUBECONFIG=/etc/kubernetes/admin.conf
+>
 >You should now deploy a pod network to the cluster.
+>
 >Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at: https://kubernetes.io/docs/concepts/cluster->administration/addons/
+>
 >Then you can join any number of worker nodes by running the following on each as root:
+>
 >kubeadm join 172.31-39-226:6443 --token xobjop-odegonyuvr?piper --discovery-token-ca-cert-hash
+>
 >Set up local kubeconfig (both for root user and normal user):
+>
 >sha25b:d8aa75e7f8b953c42e10eb5b4bflb8c34f52b5c312da33577d4fbba772f202e2
 >
 
